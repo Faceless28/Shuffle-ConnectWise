@@ -5554,4 +5554,4 @@ class Connectwise_Service_API(AppBase):
 		
 
 if __name__ == "__main__":
-    asyncio.run(Connectwise_Service_APIfdea0ac12233088ba1572acf472be8ab.run(), debug=True)
+    asyncio.run(Connectwise_Service_API.run(), debug=True)
