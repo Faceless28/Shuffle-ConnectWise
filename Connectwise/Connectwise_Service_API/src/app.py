@@ -858,7 +858,7 @@ class Connectwise_Service_API(AppBase):
 		
     async def get_tickets(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={"clientID":"8f93a413-5285-4c3a-b528-f5fb13b3b087"}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
