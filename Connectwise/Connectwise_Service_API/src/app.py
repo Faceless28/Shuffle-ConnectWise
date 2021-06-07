@@ -18,9 +18,9 @@ class Connectwise_Service_API(AppBase):
     	urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     	super().__init__(redis, logger, console_logger)
 
-    async def get_typeid(self, username_basic, password_basic, id, typeId, ssl_verify=False):
+    async def get_typeid(self, username_basic, password_basic, custom_headers, id, typeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -34,9 +34,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_typeid(self, username_basic, password_basic, id, typeId, ssl_verify=False):
+    async def delete_typeid(self, username_basic, password_basic, custom_headers, id, typeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -50,9 +50,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_typeid(self, username_basic, password_basic, id, typeId, body="", ssl_verify=False):
+    async def patch_typeid(self, username_basic, password_basic, custom_headers, id, typeId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -66,9 +66,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_typeid(self, username_basic, password_basic, id, typeId, body="", ssl_verify=False):
+    async def put_typeid(self, username_basic, password_basic, custom_headers, id, typeId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -82,9 +82,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_timeentries(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_timeentries(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/timeentries"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -104,9 +104,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_settingses_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_knowledge_base_settingses_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgebasesettings/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -120,9 +120,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_knowledgebasesettings(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_knowledgebasesettings(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgebasesettings/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -136,9 +136,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_knowledgebasesettings(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_knowledgebasesettings(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgebasesettings/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -152,9 +152,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_team_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_team_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teams/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -168,9 +168,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_configurations(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_ticket_configurations(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/configurations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -190,9 +190,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_configuration_association(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_configuration_association(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/configurations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -206,9 +206,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_documents_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_ticket_documents_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/documents/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -222,9 +222,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def gets_the_products_associated_to_the_ticket_________please_use_the_procurementproductscountconditionschargetotypeticket_and_chargetoidid_endpoint(self, username_basic, password_basic, id, ssl_verify=False):
+    async def gets_the_products_associated_to_the_ticket_________please_use_the_procurementproductscountconditionschargetotypeticket_and_chargetoidid_endpoint(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/products/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -238,9 +238,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_s_l_a_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -256,9 +256,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_articles_count(self, username_basic, password_basic, conditions="", customFieldConditions="", ssl_verify=False):
+    async def get_knowledge_base_articles_count(self, username_basic, password_basic, custom_headers, conditions="", customFieldConditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -276,9 +276,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_signoff_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_signoff_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -292,9 +292,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_servicesignoff(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_servicesignoff(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -308,9 +308,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_servicesignoff(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_servicesignoff(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -324,9 +324,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_servicesignoff(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_servicesignoff(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -340,9 +340,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_severities(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_severities(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/severities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -370,9 +370,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticketsyncs(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_ticketsyncs(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -400,9 +400,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_ticketsyncs(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_ticketsyncs(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -416,9 +416,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_configid(self, username_basic, password_basic, id, configId, ssl_verify=False):
+    async def get_configid(self, username_basic, password_basic, custom_headers, id, configId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/configurations/{configId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -432,9 +432,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_configid(self, username_basic, password_basic, id, configId, ssl_verify=False):
+    async def delete_configid(self, username_basic, password_basic, custom_headers, id, configId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/configurations/{configId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -448,9 +448,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_sub_type_item_association_by_id(self, username_basic, password_basic, id, typeSubTypeItemAssociationId, ssl_verify=False):
+    async def get_board_type_sub_type_item_association_by_id(self, username_basic, password_basic, custom_headers, id, typeSubTypeItemAssociationId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/typeSubTypeItemAssociations/{typeSubTypeItemAssociationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -464,9 +464,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_email_template_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_email_template_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -480,9 +480,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_emailtemplates(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_emailtemplates(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -496,9 +496,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_emailtemplates(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_emailtemplates(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -512,9 +512,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_emailtemplates(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_emailtemplates(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -528,9 +528,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_subtypes_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_subtypes_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -546,9 +546,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_email_template_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_email_template_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -562,9 +562,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_info_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_board_type_info_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boardtypes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -578,9 +578,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_sub_categories_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_knowledge_base_sub_categories_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -596,9 +596,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_priority_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_priority_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -612,9 +612,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_priority_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_priority_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -628,9 +628,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_priority(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_priority(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -644,9 +644,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_priority(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_priority(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -660,9 +660,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_sources(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_sources(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -690,9 +690,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_source(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_source(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -706,9 +706,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_source_usages_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_source_usages_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -722,9 +722,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_status_notifications_count(self, username_basic, password_basic, boardId, statusId, conditions="", ssl_verify=False):
+    async def get_board_status_notifications_count(self, username_basic, password_basic, custom_headers, boardId, statusId, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -740,9 +740,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_subtypeid(self, username_basic, password_basic, id, subtypeId, ssl_verify=False):
+    async def get_subtypeid(self, username_basic, password_basic, custom_headers, id, subtypeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -756,9 +756,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_subtypeid(self, username_basic, password_basic, id, subtypeId, ssl_verify=False):
+    async def delete_subtypeid(self, username_basic, password_basic, custom_headers, id, subtypeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -772,9 +772,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_subtypeid(self, username_basic, password_basic, id, subtypeId, body="", ssl_verify=False):
+    async def patch_subtypeid(self, username_basic, password_basic, custom_headers, id, subtypeId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -788,9 +788,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_subtypeid(self, username_basic, password_basic, id, subtypeId, body="", ssl_verify=False):
+    async def put_subtypeid(self, username_basic, password_basic, custom_headers, id, subtypeId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -804,9 +804,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_usage_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_survey_usage_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -820,9 +820,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_options_count(self, username_basic, password_basic, surveyID, questionID, conditions="", ssl_verify=False):
+    async def get_survey_options_count(self, username_basic, password_basic, custom_headers, surveyID, questionID, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -838,9 +838,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_ticket_links_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_service_ticket_links_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -856,9 +856,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_tickets(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_tickets(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={"clientID":"8f93a413-5285-4c3a-b528-f5fb13b3b087"}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -886,9 +886,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_ticket(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_ticket(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -902,9 +902,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_tickets_count(self, username_basic, password_basic, conditions="", customFieldConditions="", ssl_verify=False):
+    async def get_tickets_count(self, username_basic, password_basic, custom_headers, conditions="", customFieldConditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -922,9 +922,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledgebasearticles(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_knowledgebasearticles(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -952,9 +952,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_knowledgebasearticles(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_knowledgebasearticles(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -968,9 +968,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_location_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_location_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -984,9 +984,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_location_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_location_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1000,9 +1000,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_location(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_location(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1016,9 +1016,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_location(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_location(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1032,9 +1032,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_codes(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_codes(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1062,9 +1062,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_codes(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_codes(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1078,9 +1078,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_emailtemplates(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_emailtemplates(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1108,9 +1108,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_emailtemplates(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_emailtemplates(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1124,9 +1124,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_signoff_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_signoff_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1140,9 +1140,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_slas(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_slas(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1170,9 +1170,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_slas(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_slas(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1186,9 +1186,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_items_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_items_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1204,9 +1204,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_template_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_template_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/templates/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1220,9 +1220,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_impact(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_impact(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/impacts"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1250,9 +1250,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_category_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_knowledge_base_category_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1266,9 +1266,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_knowledgebasecategories(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_knowledgebasecategories(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1282,9 +1282,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_knowledgebasecategories(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_knowledgebasecategories(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1298,9 +1298,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_knowledgebasecategories(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_knowledgebasecategories(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1314,9 +1314,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_auto_assign_resources_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_board_auto_assign_resources_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1332,9 +1332,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_taskid(self, username_basic, password_basic, id, taskId, ssl_verify=False):
+    async def get_taskid(self, username_basic, password_basic, custom_headers, id, taskId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks/{taskId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1348,9 +1348,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_taskid(self, username_basic, password_basic, id, taskId, ssl_verify=False):
+    async def delete_taskid(self, username_basic, password_basic, custom_headers, id, taskId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks/{taskId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1364,9 +1364,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_taskid(self, username_basic, password_basic, id, taskId, body="", ssl_verify=False):
+    async def patch_taskid(self, username_basic, password_basic, custom_headers, id, taskId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks/{taskId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1380,9 +1380,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_taskid(self, username_basic, password_basic, id, taskId, body="", ssl_verify=False):
+    async def put_taskid(self, username_basic, password_basic, custom_headers, id, taskId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks/{taskId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1396,9 +1396,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_typesubtypeitemassociations(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_typesubtypeitemassociations(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/typeSubTypeItemAssociations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1426,9 +1426,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_sub_type_item_associations_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_board_type_sub_type_item_associations_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/typeSubTypeItemAssociations/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1444,9 +1444,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledgebasesubcategories(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_knowledgebasesubcategories(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1474,9 +1474,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_knowledgebasesubcategories(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_knowledgebasesubcategories(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1490,9 +1490,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_s_l_a_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1506,9 +1506,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_board_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1522,9 +1522,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_board_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_board_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1538,9 +1538,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_board(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_board(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1554,9 +1554,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_board(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_board(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1570,9 +1570,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_teams(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_service_teams(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teams"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1600,9 +1600,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_configurations_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_ticket_configurations_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/configurations/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1616,9 +1616,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_merge(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_merge(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/merge"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1632,9 +1632,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def gets_time_entries_count_associated_to_the_ticket_________please_use_the_timeentriescountconditionschargetotypeserviceticket_or_chargetotypeprojectticket_and_chargetoidid_endpoint(self, username_basic, password_basic, id, ssl_verify=False):
+    async def gets_time_entries_count_associated_to_the_ticket_________please_use_the_timeentriescountconditionschargetotypeserviceticket_or_chargetotypeprojectticket_and_chargetoidid_endpoint(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/timeentries/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1648,9 +1648,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_notifications_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_board_notifications_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1666,9 +1666,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_types_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_types_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1684,9 +1684,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_ticket_link_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_ticket_link_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1700,9 +1700,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_ticketlinks(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_ticketlinks(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1716,9 +1716,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_ticketlinks(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_ticketlinks(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1732,9 +1732,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_ticketlinks(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_ticketlinks(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1748,9 +1748,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_usages_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_board_usages_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1764,9 +1764,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_templates(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_templates(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/templates"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1794,9 +1794,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_team_list_usages(self, username_basic, password_basic, id, teamId, ssl_verify=False):
+    async def get_board_team_list_usages(self, username_basic, password_basic, custom_headers, id, teamId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/{teamId}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1810,9 +1810,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_email_template_usages_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_email_template_usages_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1826,9 +1826,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_templates_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_templates_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/templates/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1844,9 +1844,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_notes_count(self, username_basic, password_basic, parentId, ssl_verify=False):
+    async def get_service_notes_count(self, username_basic, password_basic, custom_headers, parentId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1860,9 +1860,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_note_by_id(self, username_basic, password_basic, id, parentId, ssl_verify=False):
+    async def get_service_note_by_id(self, username_basic, password_basic, custom_headers, id, parentId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1876,9 +1876,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_parentid(self, username_basic, password_basic, id, parentId, ssl_verify=False):
+    async def delete_parentid(self, username_basic, password_basic, custom_headers, id, parentId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1892,9 +1892,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_parentid(self, username_basic, password_basic, id, parentId, body="", ssl_verify=False):
+    async def patch_parentid(self, username_basic, password_basic, custom_headers, id, parentId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1908,9 +1908,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_parentid(self, username_basic, password_basic, id, parentId, body="", ssl_verify=False):
+    async def put_parentid(self, username_basic, password_basic, custom_headers, id, parentId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1924,9 +1924,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_boards_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_boards_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1942,9 +1942,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_status_usages_count(self, username_basic, password_basic, id, statusId, ssl_verify=False):
+    async def get_status_usages_count(self, username_basic, password_basic, custom_headers, id, statusId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1958,9 +1958,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_generate(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_generate(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/templates/{id}/generate"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1974,9 +1974,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_item_usages(self, username_basic, password_basic, id, itemId, ssl_verify=False):
+    async def get_item_usages(self, username_basic, password_basic, custom_headers, id, itemId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -1990,9 +1990,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_types_list_usages(self, username_basic, password_basic, id, typeId, ssl_verify=False):
+    async def get_board_types_list_usages(self, username_basic, password_basic, custom_headers, id, typeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2006,9 +2006,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_scheduleentries(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_scheduleentries(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/scheduleentries"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2028,9 +2028,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_parentid(self, username_basic, password_basic, parentId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_parentid(self, username_basic, password_basic, custom_headers, parentId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2058,9 +2058,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_parentid(self, username_basic, password_basic, parentId, body="", ssl_verify=False):
+    async def post_parentid(self, username_basic, password_basic, custom_headers, parentId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{parentId}/notes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2074,9 +2074,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_boards(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_boards(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2104,9 +2104,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_board(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_board(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2120,9 +2120,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_external_integration_status_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_external_integration_status_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/statusExternalIntegrationReferences/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2136,9 +2136,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_statusid(self, username_basic, password_basic, id, statusId, ssl_verify=False):
+    async def get_statusid(self, username_basic, password_basic, custom_headers, id, statusId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2152,9 +2152,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_statusid(self, username_basic, password_basic, id, statusId, ssl_verify=False):
+    async def delete_statusid(self, username_basic, password_basic, custom_headers, id, statusId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2168,9 +2168,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_statusid(self, username_basic, password_basic, id, statusId, body="", ssl_verify=False):
+    async def patch_statusid(self, username_basic, password_basic, custom_headers, id, statusId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2184,9 +2184,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_statusid(self, username_basic, password_basic, id, statusId, body="", ssl_verify=False):
+    async def put_statusid(self, username_basic, password_basic, custom_headers, id, statusId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2200,9 +2200,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_categories_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_knowledge_base_categories_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2218,9 +2218,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_statusexternalintegrationreferences(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_statusexternalintegrationreferences(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/statusExternalIntegrationReferences"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2248,9 +2248,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_surveyid(self, username_basic, password_basic, surveyID, questionID, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_surveyid(self, username_basic, password_basic, custom_headers, surveyID, questionID, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2278,9 +2278,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_surveyid(self, username_basic, password_basic, surveyID, questionID, body="", ssl_verify=False):
+    async def post_surveyid(self, username_basic, password_basic, custom_headers, surveyID, questionID, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2294,9 +2294,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_boardid(self, username_basic, password_basic, boardId, itemId, id, body="", ssl_verify=False):
+    async def patch_boardid(self, username_basic, password_basic, custom_headers, boardId, itemId, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/items/{itemId}/associations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2310,9 +2310,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_boardid(self, username_basic, password_basic, boardId, itemId, id, body="", ssl_verify=False):
+    async def put_boardid(self, username_basic, password_basic, custom_headers, boardId, itemId, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/items/{itemId}/associations/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2326,9 +2326,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_statuses_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_statuses_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2344,9 +2344,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_code_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_code_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2360,9 +2360,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_code_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_code_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2376,9 +2376,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_code(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_code(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2392,9 +2392,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_code(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_code(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2408,9 +2408,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_priority(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_s_l_a_priority(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2438,9 +2438,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_s_l_a_priority(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_s_l_a_priority(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2454,9 +2454,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_teamid(self, username_basic, password_basic, id, teamId, ssl_verify=False):
+    async def get_teamid(self, username_basic, password_basic, custom_headers, id, teamId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/{teamId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2470,9 +2470,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_teamid(self, username_basic, password_basic, id, teamId, ssl_verify=False):
+    async def delete_teamid(self, username_basic, password_basic, custom_headers, id, teamId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/{teamId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2486,9 +2486,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_teamid(self, username_basic, password_basic, id, teamId, body="", ssl_verify=False):
+    async def patch_teamid(self, username_basic, password_basic, custom_headers, id, teamId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/{teamId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2502,9 +2502,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_teamid(self, username_basic, password_basic, id, teamId, body="", ssl_verify=False):
+    async def put_teamid(self, username_basic, password_basic, custom_headers, id, teamId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/{teamId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2518,9 +2518,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_notifications(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_board_notifications(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2548,9 +2548,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_board_notification(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_board_notification(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2564,9 +2564,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_email_templates_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_email_templates_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/emailTemplates/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2582,9 +2582,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_locations(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_locations(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2612,9 +2612,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_location(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_location(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2628,9 +2628,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_results_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_survey_results_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2646,9 +2646,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticketlinks(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_ticketlinks(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2676,9 +2676,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_ticketlinks(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_ticketlinks(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketLinks"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2692,9 +2692,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_documents(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_documents(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/documents"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2714,9 +2714,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_autotemplates(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_autotemplates(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2744,9 +2744,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_autotemplates(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_autotemplates(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2760,9 +2760,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_excluded_members_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_excluded_members_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/excludedMembers/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2778,9 +2778,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_products(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_products(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/products"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2800,9 +2800,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_board_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2816,9 +2816,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_impact_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_impact_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/impacts/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2834,9 +2834,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_signoff_usages_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_service_signoff_usages_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2850,9 +2850,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_create_sources_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_create_sources_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2868,9 +2868,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_auto_templates_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_auto_templates_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2886,9 +2886,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_items(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_items(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2916,9 +2916,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_item(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_item(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2932,9 +2932,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_questions_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_survey_questions_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2950,9 +2950,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_sub_category_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_knowledge_base_sub_category_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2966,9 +2966,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_knowledgebasesubcategories(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_knowledgebasesubcategories(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2982,9 +2982,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_knowledgebasesubcategories(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_knowledgebasesubcategories(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -2998,9 +2998,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_knowledgebasesubcategories(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_knowledgebasesubcategories(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseSubCategories/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3014,9 +3014,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_create_priorities_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_create_priorities_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3032,9 +3032,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_itemid(self, username_basic, password_basic, id, itemId, ssl_verify=False):
+    async def get_itemid(self, username_basic, password_basic, custom_headers, id, itemId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3048,9 +3048,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_itemid(self, username_basic, password_basic, id, itemId, ssl_verify=False):
+    async def delete_itemid(self, username_basic, password_basic, custom_headers, id, itemId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3064,9 +3064,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_itemid(self, username_basic, password_basic, id, itemId, body="", ssl_verify=False):
+    async def patch_itemid(self, username_basic, password_basic, custom_headers, id, itemId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3080,9 +3080,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_itemid(self, username_basic, password_basic, id, itemId, body="", ssl_verify=False):
+    async def put_itemid(self, username_basic, password_basic, custom_headers, id, itemId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3096,9 +3096,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_item_usages_count(self, username_basic, password_basic, id, itemId, ssl_verify=False):
+    async def get_item_usages_count(self, username_basic, password_basic, custom_headers, id, itemId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/items/{itemId}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3112,9 +3112,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_teams_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_teams_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3130,9 +3130,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_usages_count(self, username_basic, password_basic, id, typeId, ssl_verify=False):
+    async def get_board_type_usages_count(self, username_basic, password_basic, custom_headers, id, typeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types/{typeId}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3146,9 +3146,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_infos_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_board_infos_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boards/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3164,9 +3164,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_infos(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_board_type_infos(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boardtypes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3194,9 +3194,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_auto_template_by_id(self, username_basic, password_basic, id, autoTemplateId, ssl_verify=False):
+    async def get_auto_template_by_id(self, username_basic, password_basic, custom_headers, id, autoTemplateId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates/{autoTemplateId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3210,9 +3210,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_autotemplates(self, username_basic, password_basic, id, autoTemplateId, ssl_verify=False):
+    async def delete_autotemplates(self, username_basic, password_basic, custom_headers, id, autoTemplateId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates/{autoTemplateId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3226,9 +3226,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_autotemplates(self, username_basic, password_basic, id, autoTemplateId, body="", ssl_verify=False):
+    async def patch_autotemplates(self, username_basic, password_basic, custom_headers, id, autoTemplateId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates/{autoTemplateId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3242,9 +3242,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_autotemplates(self, username_basic, password_basic, id, autoTemplateId, body="", ssl_verify=False):
+    async def put_autotemplates(self, username_basic, password_basic, custom_headers, id, autoTemplateId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoTemplates/{autoTemplateId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3258,9 +3258,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_excludedmembers(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_excludedmembers(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/excludedMembers"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3288,9 +3288,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_excludedmembers(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_excludedmembers(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/excludedMembers"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3304,9 +3304,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_survey_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3320,9 +3320,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_survey_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_survey_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3336,9 +3336,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_survey(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_survey(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3352,9 +3352,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_survey(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_survey(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3368,9 +3368,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_search(self, username_basic, password_basic, page="", pageSize="", pageId="", body="", ssl_verify=False):
+    async def post_search(self, username_basic, password_basic, custom_headers, page="", pageSize="", pageId="", body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/search"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3390,9 +3390,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_teams_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_service_teams_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teams/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3408,9 +3408,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_syncs_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_ticket_syncs_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3426,9 +3426,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_activities(self, username_basic, password_basic, id, page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_activities(self, username_basic, password_basic, custom_headers, id, page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/activities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3448,9 +3448,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_status_notifications(self, username_basic, password_basic, boardId, statusId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_board_status_notifications(self, username_basic, password_basic, custom_headers, boardId, statusId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3478,9 +3478,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_boardid(self, username_basic, password_basic, boardId, statusId, body="", ssl_verify=False):
+    async def post_boardid(self, username_basic, password_basic, custom_headers, boardId, statusId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3494,9 +3494,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_priorities(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_priorities(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3524,9 +3524,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_priority(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_priority(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3540,9 +3540,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_source_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_source_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3556,9 +3556,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_surveys(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_surveys(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3586,9 +3586,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_survey(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_create_survey(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3602,9 +3602,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_questionid(self, username_basic, password_basic, id, questionId, ssl_verify=False):
+    async def get_questionid(self, username_basic, password_basic, custom_headers, id, questionId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions/{questionId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3618,9 +3618,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_questionid(self, username_basic, password_basic, id, questionId, ssl_verify=False):
+    async def delete_questionid(self, username_basic, password_basic, custom_headers, id, questionId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions/{questionId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3634,9 +3634,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_questionid(self, username_basic, password_basic, id, questionId, body="", ssl_verify=False):
+    async def patch_questionid(self, username_basic, password_basic, custom_headers, id, questionId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions/{questionId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3650,9 +3650,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_questionid(self, username_basic, password_basic, id, questionId, body="", ssl_verify=False):
+    async def put_questionid(self, username_basic, password_basic, custom_headers, id, questionId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions/{questionId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3666,9 +3666,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_ticket_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3682,9 +3682,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_ticket_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_ticket_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3698,9 +3698,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_ticket(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_ticket(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3714,9 +3714,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_ticket(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_ticket(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3730,9 +3730,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_s_l_a_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3746,9 +3746,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_slas(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_slas(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3762,9 +3762,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_slas(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_slas(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3778,9 +3778,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_slas(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_slas(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3794,9 +3794,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_image(self, username_basic, password_basic, id, useDefaultFlag="", lastModified="", ssl_verify=False):
+    async def get_image(self, username_basic, password_basic, custom_headers, id, useDefaultFlag="", lastModified="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/priorities/{id}/image"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3814,9 +3814,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_impact_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_impact_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/impacts/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3830,9 +3830,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_impact(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_impact(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/impacts/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3846,9 +3846,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_impact(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_impact(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/impacts/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3862,9 +3862,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_info_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_board_info_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boards/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3878,9 +3878,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_item_association_count(self, username_basic, password_basic, boardId, itemId, conditions="", ssl_verify=False):
+    async def get_board_item_association_count(self, username_basic, password_basic, custom_headers, boardId, itemId, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/items/{itemId}/associations/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3896,9 +3896,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_status_notification_by_id(self, username_basic, password_basic, boardId, statusId, id, ssl_verify=False):
+    async def get_board_status_notification_by_id(self, username_basic, password_basic, custom_headers, boardId, statusId, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3912,9 +3912,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_boardid(self, username_basic, password_basic, boardId, statusId, id, ssl_verify=False):
+    async def delete_boardid(self, username_basic, password_basic, custom_headers, boardId, statusId, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3928,9 +3928,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_board_status_notification(self, username_basic, password_basic, boardId, statusId, id, body="", ssl_verify=False):
+    async def patch_update_board_status_notification(self, username_basic, password_basic, custom_headers, boardId, statusId, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3944,9 +3944,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_board_status_notification(self, username_basic, password_basic, boardId, statusId, id, body="", ssl_verify=False):
+    async def put_replace_board_status_notification(self, username_basic, password_basic, custom_headers, boardId, statusId, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/statuses/{statusId}/notifications/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3960,9 +3960,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_types(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_types(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -3990,9 +3990,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_type(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_type(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/types"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4006,9 +4006,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_results(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_survey_results(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4036,9 +4036,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_survey_result(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_survey_result(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4052,9 +4052,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_option_by_id(self, username_basic, password_basic, surveyID, questionID, oid, ssl_verify=False):
+    async def get_survey_option_by_id(self, username_basic, password_basic, custom_headers, surveyID, questionID, oid, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options/{oid}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4068,9 +4068,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_surveyid(self, username_basic, password_basic, surveyID, questionID, oid, ssl_verify=False):
+    async def delete_surveyid(self, username_basic, password_basic, custom_headers, surveyID, questionID, oid, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options/{oid}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4084,9 +4084,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_surveyid(self, username_basic, password_basic, surveyID, questionID, oid, body="", ssl_verify=False):
+    async def patch_surveyid(self, username_basic, password_basic, custom_headers, surveyID, questionID, oid, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options/{oid}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4100,9 +4100,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_surveyid(self, username_basic, password_basic, surveyID, questionID, oid, body="", ssl_verify=False):
+    async def put_surveyid(self, username_basic, password_basic, custom_headers, surveyID, questionID, oid, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{surveyID}/questions/{questionID}/options/{oid}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4116,9 +4116,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_convert(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_convert(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/convert"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4132,9 +4132,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_usage_count(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_s_l_a_usage_count(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4148,9 +4148,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_sub_type_usages(self, username_basic, password_basic, id, subTypeId, ssl_verify=False):
+    async def get_board_sub_type_usages(self, username_basic, password_basic, custom_headers, id, subTypeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4164,9 +4164,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledge_base_article_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_knowledge_base_article_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4180,9 +4180,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_knowledgebasearticles(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_knowledgebasearticles(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4196,9 +4196,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_knowledgebasearticles(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_knowledgebasearticles(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4212,9 +4212,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_knowledgebasearticles(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_knowledgebasearticles(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseArticles/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4228,9 +4228,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_source_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_source_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4244,9 +4244,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_source_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_source_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4260,9 +4260,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_source(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_source(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4276,9 +4276,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_source(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_source(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/sources/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4292,9 +4292,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_copy(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_copy(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/copy"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4308,9 +4308,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_status_usages(self, username_basic, password_basic, id, statusId, ssl_verify=False):
+    async def get_status_usages(self, username_basic, password_basic, custom_headers, id, statusId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses/{statusId}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4324,9 +4324,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_servicesignoff(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_servicesignoff(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4354,9 +4354,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_servicesignoff(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_servicesignoff(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4370,9 +4370,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_list_usages(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_survey_list_usages(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/usages/list"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4386,9 +4386,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_teammembers(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_teammembers(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teamMembers"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4416,9 +4416,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_teammembers(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_teammembers(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teamMembers"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4432,9 +4432,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_team_members_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_team_members_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teamMembers/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4450,9 +4450,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_item_association_by_id(self, username_basic, password_basic, boardId, itemId, associationId, ssl_verify=False):
+    async def get_board_item_association_by_id(self, username_basic, password_basic, custom_headers, boardId, itemId, associationId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/items/{itemId}/associations/{associationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4466,9 +4466,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_teams(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_teams(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4496,9 +4496,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_team(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_team(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/teams"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4512,9 +4512,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_excluded_member_by_id(self, username_basic, password_basic, id, excludedMemberId, ssl_verify=False):
+    async def get_excluded_member_by_id(self, username_basic, password_basic, custom_headers, id, excludedMemberId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/excludedMembers/{excludedMemberId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4528,9 +4528,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_excludedmembers(self, username_basic, password_basic, id, excludedMemberId, ssl_verify=False):
+    async def delete_excludedmembers(self, username_basic, password_basic, custom_headers, id, excludedMemberId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/excludedMembers/{excludedMemberId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4544,9 +4544,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_statuses(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_statuses(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4574,9 +4574,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_statuses(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_statuses(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/statuses"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4590,9 +4590,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_sub_type_usages_count(self, username_basic, password_basic, id, subTypeId, ssl_verify=False):
+    async def get_board_sub_type_usages_count(self, username_basic, password_basic, custom_headers, id, subTypeId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes/{subtypeId}/usages"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4606,9 +4606,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledgebasecategories(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_knowledgebasecategories(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4636,9 +4636,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_knowledgebasecategories(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_knowledgebasecategories(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgeBaseCategories"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4652,9 +4652,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_create_locations_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_create_locations_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/locations/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4670,9 +4670,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def gets_the_schedule_entries_count_associated_to_the_ticket_________please_use_the_scheduleentriescountconditionstypeid4_and_objectidid_endpoint(self, username_basic, password_basic, id, ssl_verify=False):
+    async def gets_the_schedule_entries_count_associated_to_the_ticket_________please_use_the_scheduleentriescountconditionstypeid4_and_objectidid_endpoint(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/scheduleentries/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4686,9 +4686,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_priority_by_id(self, username_basic, password_basic, id, priorityId, ssl_verify=False):
+    async def get_s_l_a_priority_by_id(self, username_basic, password_basic, custom_headers, id, priorityId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities/{priorityId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4702,9 +4702,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_s_l_a_priority_by_id(self, username_basic, password_basic, id, priorityId, ssl_verify=False):
+    async def delete_s_l_a_priority_by_id(self, username_basic, password_basic, custom_headers, id, priorityId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities/{priorityId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4718,9 +4718,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_s_l_a_priority(self, username_basic, password_basic, id, priorityId, body="", ssl_verify=False):
+    async def patch_update_s_l_a_priority(self, username_basic, password_basic, custom_headers, id, priorityId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities/{priorityId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4734,9 +4734,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_s_l_a_priority(self, username_basic, password_basic, id, priorityId, body="", ssl_verify=False):
+    async def put_replace_s_l_a_priority(self, username_basic, password_basic, custom_headers, id, priorityId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities/{priorityId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4750,9 +4750,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_auto_assign_resource_by_id(self, username_basic, password_basic, id, autoAssignResourceId, ssl_verify=False):
+    async def get_board_auto_assign_resource_by_id(self, username_basic, password_basic, custom_headers, id, autoAssignResourceId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources/{autoAssignResourceId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4766,9 +4766,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_autoassignresources(self, username_basic, password_basic, id, autoAssignResourceId, ssl_verify=False):
+    async def delete_autoassignresources(self, username_basic, password_basic, custom_headers, id, autoAssignResourceId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources/{autoAssignResourceId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4782,9 +4782,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_autoassignresources(self, username_basic, password_basic, id, autoAssignResourceId, body="", ssl_verify=False):
+    async def patch_autoassignresources(self, username_basic, password_basic, custom_headers, id, autoAssignResourceId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources/{autoAssignResourceId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4798,9 +4798,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_autoassignresources(self, username_basic, password_basic, id, autoAssignResourceId, body="", ssl_verify=False):
+    async def put_autoassignresources(self, username_basic, password_basic, custom_headers, id, autoAssignResourceId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources/{autoAssignResourceId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4814,9 +4814,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_tasks_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_tasks_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4832,9 +4832,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_team_member_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_team_member_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teamMembers/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4848,9 +4848,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_teammembers(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_teammembers(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/teamMembers/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4864,9 +4864,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_ticket_sync_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_ticket_sync_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4880,9 +4880,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_ticketsyncs(self, username_basic, password_basic, id, ssl_verify=False):
+    async def delete_ticketsyncs(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4896,9 +4896,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_ticketsyncs(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_ticketsyncs(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4912,9 +4912,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_ticketsyncs(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_ticketsyncs(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/ticketSyncs/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4928,9 +4928,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_type_infos_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_board_type_infos_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boardtypes/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4946,9 +4946,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_service_signoffs_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_service_signoffs_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/serviceSignoff/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4964,9 +4964,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_status_external_integration_references_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_status_external_integration_references_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/statusExternalIntegrationReferences/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -4982,9 +4982,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_surveys_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_surveys_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5000,9 +5000,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_copy_survey(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_copy_survey(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/copy"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5016,9 +5016,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_resultid(self, username_basic, password_basic, id, resultId, ssl_verify=False):
+    async def get_resultid(self, username_basic, password_basic, custom_headers, id, resultId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results/{resultId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5032,9 +5032,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_resultid(self, username_basic, password_basic, id, resultId, ssl_verify=False):
+    async def delete_resultid(self, username_basic, password_basic, custom_headers, id, resultId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results/{resultId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5048,9 +5048,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_resultid(self, username_basic, password_basic, id, resultId, body="", ssl_verify=False):
+    async def patch_resultid(self, username_basic, password_basic, custom_headers, id, resultId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results/{resultId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5064,9 +5064,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_resultid(self, username_basic, password_basic, id, resultId, body="", ssl_verify=False):
+    async def put_resultid(self, username_basic, password_basic, custom_headers, id, resultId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/results/{resultId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5080,9 +5080,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_notificationid(self, username_basic, password_basic, id, notificationId, ssl_verify=False):
+    async def get_notificationid(self, username_basic, password_basic, custom_headers, id, notificationId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications/{notificationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5096,9 +5096,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def delete_notificationid(self, username_basic, password_basic, id, notificationId, ssl_verify=False):
+    async def delete_notificationid(self, username_basic, password_basic, custom_headers, id, notificationId, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications/{notificationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5112,9 +5112,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_notificationid(self, username_basic, password_basic, id, notificationId, body="", ssl_verify=False):
+    async def patch_notificationid(self, username_basic, password_basic, custom_headers, id, notificationId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications/{notificationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5128,9 +5128,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_notificationid(self, username_basic, password_basic, id, notificationId, body="", ssl_verify=False):
+    async def put_notificationid(self, username_basic, password_basic, custom_headers, id, notificationId, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/notifications/{notificationId}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5144,9 +5144,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_create_codes_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_create_codes_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/codes/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5162,9 +5162,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_autoassignresources(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_autoassignresources(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5192,9 +5192,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_autoassignresources(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_autoassignresources(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/autoAssignResources"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5208,9 +5208,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_knowledgebasesettings(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_knowledgebasesettings(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgebasesettings"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5238,9 +5238,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_knowledgebasesettings(self, username_basic, password_basic, body="", ssl_verify=False):
+    async def post_knowledgebasesettings(self, username_basic, password_basic, custom_headers, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/knowledgebasesettings"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5254,9 +5254,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_severities_count(self, username_basic, password_basic, conditions="", ssl_verify=False):
+    async def get_severities_count(self, username_basic, password_basic, custom_headers, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/severities/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5272,9 +5272,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_survey_questions(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_survey_questions(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5302,9 +5302,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_survey_question(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_survey_question(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/surveys/{id}/questions"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5318,9 +5318,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_tasks(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_tasks(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5348,9 +5348,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_task(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_task(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/tasks"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5364,9 +5364,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_s_l_a_priority_count(self, username_basic, password_basic, id, conditions="", ssl_verify=False):
+    async def get_s_l_a_priority_count(self, username_basic, password_basic, custom_headers, id, conditions="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/SLAs/{id}/priorities/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5382,9 +5382,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_boardid(self, username_basic, password_basic, boardId, itemId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_boardid(self, username_basic, password_basic, custom_headers, boardId, itemId, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{boardId}/items/{itemId}/associations"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5412,9 +5412,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_severity_by_id(self, username_basic, password_basic, id, ssl_verify=False):
+    async def get_severity_by_id(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/severities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5428,9 +5428,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def patch_update_severity(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def patch_update_severity(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/severities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5444,9 +5444,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def put_replace_severity(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def put_replace_severity(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/severities/{id}"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5460,9 +5460,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def gets_count_of_activities_associated_to_the_ticket_________please_use_the_salesactivitiescountconditionsticketidid_endpoint(self, username_basic, password_basic, id, ssl_verify=False):
+    async def gets_count_of_activities_associated_to_the_ticket_________please_use_the_salesactivitiescountconditionsticketidid_endpoint(self, username_basic, password_basic, custom_headers, id, ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/tickets/{id}/activities/count"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5476,9 +5476,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_subtypes(self, username_basic, password_basic, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_subtypes(self, username_basic, password_basic, custom_headers, id, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5506,9 +5506,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def post_create_subtype(self, username_basic, password_basic, id, body="", ssl_verify=False):
+    async def post_create_subtype(self, username_basic, password_basic, custom_headers, id, body="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/boards/{id}/subtypes"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
@@ -5522,9 +5522,9 @@ class Connectwise_Service_API(AppBase):
         except json.decoder.JSONDecodeError:
           return ret.text
 		
-    async def get_board_infos(self, username_basic, password_basic, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
+    async def get_board_infos(self, username_basic, password_basic, custom_headers, conditions="", orderBy="", childconditions="", customfieldconditions="", page="", pageSize="", pageId="", ssl_verify=False):
         params={}
-        headers={}
+        headers={custom_headers}
         url=f"https://api-na.myconnectwise.net/v4_6_release/apis/3.0/service/info/boards"
         if type(ssl_verify) == str: ssl_verify = False if ssl_verify.lower() == "false" or ssl_verify == "0" else True
         
